@@ -15,7 +15,7 @@ app.use(express.json());
 
 // Database pool
 const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
+    connectionString: process.env.DATABASE_URL || process.env.RAILWAY_DATABASE_URL,
     ssl: { rejectUnauthorized: false }
 });
 
